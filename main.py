@@ -7,7 +7,7 @@ import sqlite3
 
 placeholders = ["~[DATE]~", "~[JOB_BOARD]~", "~[JOBS]~"]
 mail = "hp19mx@brocku.ca"
-pswd = ""
+pswd = "300feb@gmail.com"
 to_send = "hp19mx@brocku.ca"
 
 conn = sqlite3.connect("jobs.db")
@@ -36,8 +36,8 @@ def sender():
                 for ph in range(len(placeholders)):
                     letter_contents = letter_contents.replace(
                         placeholders[ph], inputs[ph])
-            c.execute(
-                "INSERT INTO jobs_applied VALUES (date.get(),board.get(),jobs.get())")
+            c.execute("INSERT INTO jobs_applied VALUES (?, ?, ?)", (date.get(
+            ), board.get(), jobs.get().replace(',', ' | ').replace(':', '-')))
             conn.commit()
             conn.close()
 
