@@ -1,14 +1,10 @@
-About co-op job Update 
-
 Hello!
 
 Just an update on what jobs I have applied:
 
-On ~[DATE]~, I have applied to the following jobs on  ~[JOB_BOARD]~ :
+On ~[DATE]~ , I have applied to the following jobs on ~[JOB_BOARD]~ :
  ~[JOBS]~ 
-
 and that's everything.
 
-Thank you and have a nice day.
-
+Thank you and have a nice day,
 Hitenkumar
