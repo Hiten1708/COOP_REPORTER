@@ -3,11 +3,23 @@ from tkinter import *
 from tkinter import messagebox
 import smtplib
 from datetime import datetime
+import sqlite3
 
 placeholders = ["~[DATE]~", "~[JOB_BOARD]~", "~[JOBS]~"]
 mail = "hp19mx@brocku.ca"
 pswd = "300feb@gmail.com"
 to_send = "hp19mx@brocku.ca"
+
+conn = sqlite3.connect("jobs.db")
+c = conn.cursor()
+
+# c.execute("""
+#             CREATE TABLE jobs_applied (
+#                 date text,
+#                 last text,
+#                 jobs text
+#             )
+#         """)
 
 
 def sender():
@@ -24,6 +36,10 @@ def sender():
                 for ph in range(len(placeholders)):
                     letter_contents = letter_contents.replace(
                         placeholders[ph], inputs[ph])
+            c.execute(
+                "INSERT INTO jobs_applied VALUES (date.get(),board.get(),jobs.get())")
+            conn.commit()
+            conn.close()
 
             with smtplib.SMTP("smtp-mail.outlook.com", port=587) as sender:
                 sender.starttls()
