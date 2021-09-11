@@ -7,7 +7,7 @@ import sqlite3
 
 placeholders = ["~[DATE]~", "~[JOB_BOARD]~", "~[JOBS]~"]
 mail = "hp19mx@brocku.ca"
-pswd = "300feb@gmail.com"
+pswd = ""
 to_send = "hp19mx@brocku.ca"
 
 conn = sqlite3.connect("jobs.db")
