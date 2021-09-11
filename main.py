@@ -6,7 +6,7 @@ from datetime import datetime
 
 placeholders = ["~[DATE]~", "~[JOB_BOARD]~", "~[JOBS]~"]
 mail = "hp19mx@brocku.ca"
-pswd = "300feb@gmail.com"
+pswd = ""
 to_send = "hp19mx@brocku.ca"
 
 
